@@ -1,0 +1,6 @@
+path:
+    model_path : "/software/python/Qwen-model"
+    text2vec_path : "/software/python/text2vec-bge-large-chinese"
+
+url:
+    local_api_url : "http://127.0.0.1:8000"
