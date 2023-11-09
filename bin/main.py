@@ -1,4 +1,4 @@
-from langchain.llms import chatglm
+from langchain.llms.chatglm import ChatGLM
 from langchain.chains import RetrievalQA
 import sys,os
 root_path = os.path.join(os.path.dirname(__file__),'..')
@@ -17,7 +17,7 @@ save_data_directory = os.path.join(os.path.dirname(__file__),'../data/vec')
 data_process = processing_data(text2vec_model_path,load_data_directory,save_data_directory)
 db = data_process.running()
 
-llm = chatglm(endpoint_url = local_url,
+llm = ChatGLM(endpoint_url = local_url,
               max_token = 80000,
               top_p = 0.9)
 
