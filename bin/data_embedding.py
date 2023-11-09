@@ -2,10 +2,12 @@ from langchain.document_loaders import DirectoryLoader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings.huggingface import HuggingFaceBgeEmbeddings
 from langchain.vectorstores import chroma
-import os
+import sys,os
+sys.path.append(os.path.join(os.path.dirname(__file__),'..'))
 from config.load_update_config import read_config, update_config
 config = read_config()
 text2vec_path = config['path']['text2vec_path']
+print(text2vec_path)
 
 def load_documents(directory = '../data/documents'):
     loader = DirectoryLoader(directory)

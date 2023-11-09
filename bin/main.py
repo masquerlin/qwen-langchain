@@ -1,4 +1,6 @@
 from langchain.llms import chatglm
+import sys,os
+sys.path.append(os.path.join(os.path.dirname(__file__),'..'))
 from config.load_update_config import read_config, update_config
 config = read_config()
 model_path = config['path']['model_path']
