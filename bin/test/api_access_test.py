@@ -1,11 +1,12 @@
 import requests
 import sys,os
+root_path = os.path.join(os.path.dirname(__file__),'..')
 sys.path.append(os.path.join(os.path.dirname(__file__),'../..'))
-sys.path.append(os.path.join(os.path.dirname(__file__),'..'))
+sys.path.append(root_path)
 from config.load_update_config import read_config, update_config
-config = read_config()
+config = read_config(os.path.join(root_path,'../config/config.yaml'))
 local_url = config['url']['local_api_url']
-print(local_url)
+
 
 def chat(question, history):
     resp = requests.post(
