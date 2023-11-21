@@ -21,7 +21,6 @@ class processing_data():
         encode_kwargs = {"normalize_embeddings":False}
         model_kwargs = {"device": "cuda:0"}
         return HuggingFaceBgeEmbeddings(
-            model_name = '/software/python/text2vec-bge-large-chinese',
             cache_folder = self.text2vec_model_path,
             model_kwargs = model_kwargs,
             encode_kwargs = encode_kwargs
